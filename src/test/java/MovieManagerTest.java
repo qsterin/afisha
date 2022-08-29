@@ -70,4 +70,22 @@ class MovieManagerTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void findLastParameterLowLimit() {
+        MovieManager movieManager = new MovieManager(2);
+
+        movieManager.add(movie1);
+        movieManager.add(movie2);
+        movieManager.add(movie3);
+        movieManager.add(movie4);
+
+        String[] expected = {
+                movie4,
+                movie3
+        };
+        String[] actual = movieManager.findlast();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
